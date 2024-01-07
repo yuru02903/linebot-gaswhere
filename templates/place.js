@@ -1,17 +1,7 @@
 export default () => {
   return {
     type: 'bubble',
-    hero: {
-      type: 'image',
-      url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
-      size: 'full',
-      aspectRatio: '20:13',
-      aspectMode: 'cover',
-      action: {
-        type: 'uri',
-        uri: 'http://linecorp.com/'
-      }
-    },
+
     body: {
       type: 'box',
       layout: 'vertical',
@@ -28,21 +18,6 @@ export default () => {
           margin: 'lg',
           spacing: 'sm',
           contents: [
-            {
-              type: 'box',
-              layout: 'baseline',
-              spacing: 'sm',
-              contents: [
-                {
-                  type: 'text',
-                  text: 'Miraina Tower, 4-1-6 Shinjaaaaaaaaaaaaaauku, Tokyoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                  wrap: true,
-                  color: '#666666',
-                  size: 'sm',
-                  flex: 5
-                }
-              ]
-            },
             {
               type: 'box',
               layout: 'vertical',

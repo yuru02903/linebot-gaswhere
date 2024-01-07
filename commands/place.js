@@ -33,12 +33,9 @@ export default async (event) => {
       })
       if (!has) {
         const template = placeTemplate()
-        template.hero.url =
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/CPC_Corporation%2C_Taiwan_Seal.svg/150px-CPC_Corporation%2C_Taiwan_Seal.svg.png'
         template.body.contents[0].text = value.站名
-        template.body.contents[1].contents[0].contents[0].text = value.服務類型 || 'none'
-        template.body.contents[1].contents[1].contents[0].contents[1].text = value.地址 || 'none'
-        template.body.contents[1].contents[2].contents[0].contents[1].text =
+        template.body.contents[1].contents[0].contents[0].contents[1].text = value.地址 || 'none'
+        template.body.contents[1].contents[1].contents[0].contents[1].text =
           `${Math.round(value.distance * 100) / 100} km` || 'none'
         templates.push(template)
         console.log(value)
