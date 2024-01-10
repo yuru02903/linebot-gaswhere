@@ -34,11 +34,15 @@ export default async (event) => {
       if (!has) {
         const template = placeTemplate()
         template.body.contents[0].text = value.站名
-        template.body.contents[1].contents[0].contents[0].contents[1].text = value.地址 || 'none'
-        template.body.contents[1].contents[1].contents[0].contents[1].text =
+        template.body.contents[1].contents[0].contents[0].contents[1].text = value.提供服務時段 || 'none'
+        template.body.contents[1].contents[1].contents[0].contents[1].text = value.地址 || 'none'
+        template.body.contents[1].contents[2].contents[0].contents[1].text =
           `${Math.round(value.distance * 100) / 100} km` || 'none'
+          
+        template.footer.contents[0].action.uri = 'https://www.google.com/maps/search/'+ encodeURI('台灣中油'+ value.站名)
         templates.push(template)
         console.log(value)
+        console.log(template.footer.contents[0].action.uri)
       }
     })
 

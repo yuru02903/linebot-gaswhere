@@ -1,5 +1,4 @@
 import axios from 'axios'
-// import fs from 'node:fs'
 
 export default async (event) => {
   try {
@@ -8,12 +7,11 @@ export default async (event) => {
     let date = ''
     console.log(id)
 
-    const { data } = await axios.get('https://vipmbr.cpc.com.tw/openData/SixtypeOilListPrice')
+    const { data } = await axios.get('https://vipmbr.cpc.com.tw/openData/MainProdListPrice')
     console.log(data.length)
     console.log(data[0].產品名稱)
 
     for (let i = 0; i < data.length; i++) {
-      // console.log('迴圈開始')
 
       if (id === data[i].產品名稱) {
         console.log(data[i].產品名稱)
@@ -24,8 +22,7 @@ export default async (event) => {
     console.log('查詢結束')
 
     console.log(oilPrice)
-    event.reply(id + '-參考牌價: ' + oilPrice + ' ；牌價生效日期' + date)
-    // fs.writeFileSync('./gasPrice.json', JSON.stringify(data2, null, 2))
+    event.reply(id + '-參考牌價: ' + oilPrice + '\u000A'+ '牌價生效日期' + date)
   } catch (error) {
     console.log(error)
   }
